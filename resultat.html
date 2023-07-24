@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Puissance 4 </title>
+		<meta charset="utf-8" />
+        <link rel="icon" href="./images/logo.png" />
+
+		<link rel="stylesheet" href="css/main.css" />
+
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class=" ">
+							<img src ="./images/logo.png" > </span>
+						</div>
+						<div class="content">
+							<div class="inner">
+                                <h2>Résultat</h2>
+								
+                                        <table id="main" align="center"  rowspan="0">
+                                        
+                                            <tr>
+                                            <td>
+                                                <span class="player1Score" ></span> 
+                                            </td>
+                                            <td>
+                                                <span id="resultatPlayer1" >0</span> 
+                                            </td>
+                                            <td>
+                                                :
+                                            </td>                        
+                                            <td>
+                                                <span id="resultatPlayer2" >0</span> 
+                                            </td>
+                                            <td>
+                                                <span class="player2Score" ></span> 
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4"> Temps Global
+                                                    <span id="time" ></span> 
+                                                </td>
+                                                
+                                            </tr>
+                                    </table>
+                                    <table id="parties" align="center"  border="1">
+                                        <tr>
+                                            <th>
+                                            Partie
+                                            </th>
+                                            <th>
+                                            Gagant
+                                            </th>
+                                            
+                                            <th>
+                                            Temps
+                                            </th>
+                                        </tr>
+                                    </table>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="index.html">accueil</a></li>
+								<li><a href="regles.html">Regles de jeu</a></li>
+								<li><a href="jouer.html"  class="active">Jouer</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+
+					</footer>
+
+			</div>
+            <script>
+                var url = window.location.toString().split('?');            
+                 if(url.length > 0 ){
+                    url = url[1];
+                    url = url.split('&');
+                    if(url.length > 0 ){
+                       
+                       score1 = url[0].split('score1=');
+                       score2 = url[1].split('score2=');
+                       time = url[2].split('time=');
+                       parties = url[3].split('parties=');
+                       parties = parties[1].split(',');
+        
+                       document.getElementById("resultatPlayer1").innerHTML = score1[1];
+                       document.getElementById("resultatPlayer2").innerHTML = score2[1];
+                       document.getElementById("time").innerHTML = time[1];
+                       let table = document.getElementById('parties');
+                       let num_partie=0;
+                       
+                       for (let i = 0; i <parties.length ; i=i+2) {
+                            num_partie++;
+                            let tr = table.appendChild(document.createElement('tr'));
+                            let td0 = tr.appendChild(document.createElement('td'));
+                            td0.innerHTML = num_partie;
+                            let td1 = tr.appendChild(document.createElement('td'));
+                            td1.innerHTML = parties[i];
+                            let td2 = tr.appendChild(document.createElement('td'));
+                            td2.innerHTML = parties[i+1];
+                            table.insertRow(tr);
+                        }
+        
+                   } 
+                }
+               
+             </script>
+
+	</body>
+</html>
+ 

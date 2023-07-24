@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Puissance 4</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./images/logo.png" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/jeu.css" />
+  </head>
+
+  <body>
+   <!-- <span class='red'><i>Veuillez activer javascript pour jouer.</i> </span><br><br>-->
+    <!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class=" ">
+							<img src ="./images/logo.png" > </span>
+						</div>
+						<div class="content">
+							<div class="innerJeu">								
+              <!-- jeu -->             
+      
+              <table id="main" align="center"  rowspan="0">
+                <tr>
+                  <td>
+                    <div id="game"  onclick=" board_click(event);"> <!-- // On ajoute le gestionnaire d'événements pour gérer le click-->
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div id="resultat"  > <!-- // On ajoute le gestionnaire d'événements pour gérer le click-->
+                      <table  >
+                        <tr>
+                          <td>
+                            <div id="currentImg"></div>  
+                          </td>
+                          <td align="center">
+                            <div id="score" style="display:none">  
+                              <table  colspan="0">
+                                <tr>
+                                  <td>
+                                    <span class="player1Score" ></span> 
+                                  </td>
+                                  <td>
+                                    <span id="ScorePlayer1" >0</span> 
+                                  </td>
+                                  <td>
+                                    :
+                                  </td>                        
+                                  <td>
+                                    <span id="ScorePlayer2" >0</span> 
+                                  </td>
+                                  <td>
+                                    <span class="player2Score" ></span> 
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>  
+                          </td>
+                          <td>
+                          
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Grille 
+                            <input id="row" value="6"> 
+                            <input id="col" value="7"> 
+                          </td>
+                          <td  align="center">
+                            <div id="timer" style="display:none">  </div>  
+                          </td>
+                          <td>
+                            <div id="buttons" style="display:none">
+                              <button id="reset" onclick="reset()">Reset </button>
+                                <button id="new" onclick="nouveau()"> New</button>
+                            </div>  
+                            <div id="buttonvalider">
+                              <button id="commencer" onclick="lancerJeu()">Démarrer le jeu </button>
+                            </div> 
+                          </td>
+                        </tr>
+
+                      </table>
+                      
+                        
+                    </div>
+                  </td>
+                </tr>
+              </table> 
+              <!-- fin jeu  -->
+              </div>
+						</div>
+						<nav>
+							<ul>
+								<li><a href="index.html">Accueil</a></li>
+								<li><a href="regles.html">Regles de jeu</a></li>
+								<li><a href="jouer.html"  class="active">Jouer</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				 
+
+				<!-- Footer -->
+					<footer id="footer">
+
+					</footer>
+
+			</div>
+
+    
+       
+     <!-- Footer -->
+    <footer id="footer">
+    </footer>
+     
+
+    <script src="js/jeu.js" charset="utf-8"></script>
+
+</body>
+</html>
